@@ -19,20 +19,20 @@ describe('Test login functionality', () => {
   });
 
   it('should not login when login credentials are blank', function () {
-    cy.get('[placeholder="Enter Username"]').type('');
-    cy.get('[placeholder="password"]').type('');
+    cy.get('[placeholder="Enter Username"]');
+    cy.get('[placeholder="password"]');
     cy.get('.sc-bZQynM').click();
   });
 
   it('should not login when correct username is supplied but password is missing', function () {
     cy.get('[placeholder="Enter Username"]').type('SomeUser_name');
-    cy.get('[placeholder="password"]').type('');
+    cy.get('[placeholder="password"]').type(' ');
     cy.get('.sc-bZQynM').click();
   });
 
   it('should not login when correct password is supplied but username is missing', function () {
     cy.get('[placeholder="Enter Username"]').type('{selectall} ');
-    cy.get('[placeholder="password"]').type('TopSecret1234!');
+    cy.get('[placeholder="password"]').type('{selectall}TopSecret1234!');
     cy.get('.sc-bZQynM').click();
   });
 

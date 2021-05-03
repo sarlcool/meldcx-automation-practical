@@ -97,4 +97,18 @@ describe('Test login functionality', () => {
   it('should click LOGOUT button', function () {
     cy.get('.sc-bxivhb').click();
   });
+
+  // recheck login page elements
+  it('should check login elements', () => {
+    cy.get('[placeholder="Enter Username"]')
+      .invoke('attr', 'placeholder')
+      .should('contain', 'Enter Username');
+    cy.get('[placeholder="password"]')
+      .invoke('attr', 'placeholder')
+      .should('contain', 'password');
+    cy.get('.sc-bZQynM').invoke('text').should('contain', 'LOGIN');
+    cy.get('.sc-ifAKCX > div')
+      .invoke('text')
+      .should('contain', 'If you do not have an account, contact an admin');
+  });
 });
