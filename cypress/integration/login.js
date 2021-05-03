@@ -58,7 +58,7 @@ describe('Test login functionality', () => {
     cy.get('.sc-bxivhb').click();
   });
 
-  it('should login as SomeName', function () {
+  it('should login as Dummy Tree', function () {
     cy.get('[placeholder="Enter Username"]').type('dummytree');
     cy.get('[placeholder="password"]').type('test1');
     cy.get('.sc-bZQynM').click();
